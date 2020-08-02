@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "whiteglowstone:item/white_glowstone_dust"
+  }
+}

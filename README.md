@@ -1,9 +1,9 @@
-# Fabric Example Mod
+# White Glowstone [Fabric]
 
-## Setup
+## Description
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+A simple mod that adds white glowstone to minecraft.
 
-## License
+## Supported Versions
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+1.16.1
