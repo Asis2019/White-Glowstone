@@ -2,9 +2,7 @@ package com.asis;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -13,16 +11,16 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.decorator.*;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.decorator.Decorator;
+import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
+import net.minecraft.world.gen.feature.FeatureConfig;
 
 public class WhiteGlowstoneMod implements ModInitializer {
 
     public static final String MOD_ID = "whiteglowstone";
 
-
     //Blocks
-    public static final Block WHITE_GLOWSTONE_BLOCK = new Block(FabricBlockSettings.copyOf(Blocks.GLOWSTONE));
+    public static final Block WHITE_GLOWSTONE_BLOCK = new WhiteGlowstoneBlock();
 
     //Mod group
     public static final ItemGroup MOD_ITEM_GROUP = FabricItemGroupBuilder.build(
@@ -35,8 +33,8 @@ public class WhiteGlowstoneMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "white_glowstone_block"), WHITE_GLOWSTONE_BLOCK);
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "white_glowstone_block"), new BlockItem(WHITE_GLOWSTONE_BLOCK, new Item.Settings().group(MOD_ITEM_GROUP)));
+        Registry.register(Registry.BLOCK, WhiteGlowstoneBlock.ID, WHITE_GLOWSTONE_BLOCK);
+        Registry.register(Registry.ITEM, WhiteGlowstoneBlock.ID, new BlockItem(WHITE_GLOWSTONE_BLOCK, new Item.Settings().group(MOD_ITEM_GROUP)));
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "white_glowstone_dust"), WHITE_GLOWSTONE_DUST);
 
